@@ -21,9 +21,10 @@ config.action_controller.allow_forgery_protection    = false
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
-   config.gem "rspec",            :lib => false
-    config.gem "rspec-rails",      :lib => false
-    config.gem "remarkable_rails", :lib => false
+config.gem "rspec",            :lib => false
+config.gem "rspec-rails",      :lib => false
+config.gem "remarkable_rails", :lib => false
+
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,
 # like if you have constraints or database-specific column types

@@ -1,6 +1,6 @@
 <% div_for comment do %>
-	<p>
-  		<%=h comment.body %><br />
-  		<small>Posted by <%= comment.user.login %> <%= time_ago_in_words(comment.created_at) %> ago</small>
-	</p>
+
+	<%= textilize comment.body %>
+  	<small>Posted by <%= comment.user.login %> <%= time_ago_in_words(comment.created_at) %> ago</small>
+
 <% end %>

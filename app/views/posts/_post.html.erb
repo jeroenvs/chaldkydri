@@ -1,7 +1,7 @@
 <% div_for post do %>
 
 	<h3><%= link_to_unless_current h(post.title), post %></h3>	
-	<%= simple_format h(post.body) %>
+	<%= textilize post.body %>
 	<small>Posted by <%=h post.user.login %> <%= time_ago_in_words(post.created_at) %> ago</small>
 
 <% end %>

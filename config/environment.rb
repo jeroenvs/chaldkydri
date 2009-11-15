@@ -36,6 +36,7 @@
     # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
     # config.gem "sqlite3-ruby", :lib => "sqlite3"
     # config.gem "aws-s3", :lib => "aws/s3"
+    config.gem 'RedCloth', :lib => 'redcloth'
 
      
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
