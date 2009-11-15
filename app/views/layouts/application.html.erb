@@ -6,7 +6,7 @@
 		<title><%= @page_title || 'Chaldkydri' %></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 		<%= stylesheet_link_tag 'style' %>
-		<%= auto_discovery_link_tag :atom, formatted_posts_path(:atom) %>
+		<%= auto_discovery_link_tag :atom, posts_path(:atom) %>
 	  	<%= javascript_include_tag :all %>
 
 		<!--
