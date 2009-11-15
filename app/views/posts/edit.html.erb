@@ -1,0 +1,9 @@
+<h1>Editing post</h1>
+
+<% form_for(@post) do |f| %>
+  <%= render :partial => "form" , :locals => { :f => f }  %>
+
+<% end %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

@@ -1,0 +1,27 @@
+<% form_for([comment.post, comment], :html => { :id =>"comment_form" }) do |f| %>
+
+  <%= f.error_messages %>
+  <%= f.hidden_field :post_id %>
+
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :body, :rows => 3 %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<!--
+	<script type="text/javascript"> 
+	function bindForm() {
+		$('#comment_form').ajaxForm({dataType:"script"}); 
+		console.log("form binded");				
+	}
+
+	$(document).ready(function() { 
+	
+		bindForm();
+	}); 
+	</script>
+-->

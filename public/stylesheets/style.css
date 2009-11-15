@@ -1,0 +1,183 @@
+/* Styles */
+
+body {
+	color: black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 73%;  /* Enables font size scaling in MSIE */
+	margin: 0;
+	padding: 0;
+}
+
+html > body {
+	font-size: 9pt;
+}
+
+.doNotDisplay {
+	display: none !important;
+}
+
+/* Header */
+
+.superHeader {
+	color: rgb(130, 128, 154);
+	background-color: rgb(66, 50, 33);
+	text-align: right;
+	margin: 0;
+	padding: 0.5ex 10px;
+}
+
+.superHeader span {
+	color: #900;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+#header {
+	color: inherit;
+	background-color: rgb(184,38,25);
+}
+
+.headerTitle {
+	margin: 0;
+	padding: 0.25em 4mm 0.25em 4mm;
+}
+
+.headerTitle a {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+	font-size: 110%;  /* For MSIE */
+	font-weight: bold;
+	font-style: italic;
+}
+
+.headerTitle > a {
+	font-size: 138%;  /* For fully standards-compliant user agents */
+}
+
+.headerTitle span {
+	color: white;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+.subHeader {
+	color: white;
+	background-color: #600;
+	font-size: 109%;
+	text-align: center;
+	margin: 0;
+	padding: 0.5ex 0;
+}
+
+.subHeader a {
+	color: white;
+	background-color: #900;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 1ex;
+}
+
+.subHeader a:hover {
+	color: black;
+	background-color: white;
+}
+
+/* Body */
+
+#main-copy {
+	color: black;
+	background-color: white;
+	text-align: justify;
+	line-height: 1.5em;
+	margin: 0 0 0 13.5em;
+	padding: 0.5ex 15em 1em 1em;
+	border-left: 1px solid rgb(216,210,195);
+}
+
+#main-copy h1 {
+	color: #900;
+	background-color: transparent;
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 175%;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	margin: 1em 0 0 0;
+	padding: 1em 0 0 0;
+	border-top: 1px solid rgb(216,210,195);
+}
+
+#main-copy a {
+	color: #600;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+#main-copy a:hover {
+	text-decoration: none;
+}
+
+p {
+	margin: 1em 0 1.5em 0;
+	padding: 0;
+}
+
+/* Header */
+
+.midHeader {
+	color: lightgray;
+	background-color: #900;
+	margin: 0;
+	padding: 0.26ex 10px;
+}
+
+.headerTitle {
+	font-size: 300%;
+	margin: 0;
+	padding: 0;
+}
+
+.headerSubTitle {
+	font-size: 151%;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0 0 1ex 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 1em 0;
+	padding: 1.2em;
+	padding-top: 0.4em;
+	background: #FFFFFF;
+	border: 1px solid #e7e8ac;
+}
+
+form label {
+	color: #444;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.flash_notice {
+	color: #333;  
+	background: #efe;
+	border: solid 1px #bd7;  
+}
+
+.flash_notice .message {
+	padding: 0 0 0 25px;
+}
+
+dt {
+	font-weight: bold;
+	margin: 0;
+	padding: 0 0 0.5ex 0;
+}
+
+dd {
+	margin: 0 0 1.5em 1.5em;
+	padding: 0;
+}
