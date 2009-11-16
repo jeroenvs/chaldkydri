@@ -2,6 +2,19 @@
 
 	<h3><%= link_to_unless_current h(post.title), post %></h3>	
 	<%= textilize post.body %>
-	<small>Posted by <%= link_to h(post.user.login), post.user %> <%= time_ago_in_words(post.created_at) %> ago</small>
+	<small>
+		<!-- Author -->
+		Posted by <%= link_to h(post.user.login), post.user %> <%= time_ago_in_words(post.created_at) %> ago.
+		
+		<!-- Comments -->
+		<% if post.comments.size > 0 %>
+			Commented by 
+			<% if post.comments.size == 1 %>
+				<%= post.comments.first.user.login %>.
+			<% else %>
+				<%= post.comments.size %> users.
+			<% end %>
+		<% end %>
+	</small>
 
 <% end %>
