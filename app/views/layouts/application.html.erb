@@ -30,31 +30,27 @@
 	
 		<!-- Header -->
 		<div id="header">
-			<div class="superHeader">
+			<div class="session">
 				<% if user_logged_in? %>
-					<span>You are logged in as: </span> <%= current_user.login %>
-				<% else %>
-					<span>Welcome Guest</span>
-				<% end %>
-			</div>
-			<div class="midHeader"> 
-				<h1 class="headerTitle" lang="la">Chaldkydri</h1>
-			</div>
-			<div class="subHeader">
-				<span class="doNotDisplay">Navigation:</span>
-				<% if user_logged_in? %>
+					You are logged in as: <%= current_user.login %>.
 					<%= link_to 'Logout', logout_url %>
 				<% else %>
-					<%= link_to "Signup", signup_url %> | <%= link_to 'Login', login_url %>
-				<% end %> 
-				| <%= link_to 'Contact Us', 'contact' %>
+					Not logged in.
+					<%= link_to 'Login', login_url %>
+				<% end %>
+			</div>
+			<div class="logo"> 
+				<h1>Chaldkydri</h1>
+			</div>
+			<div class="navigation">
+				<%= link_to 'Posts', posts_path %>
 			</div>
 
 		</div>
 
 		<!-- Body -->
-		<div id="main-copy">
-			<% flash.each do |key,value| %>
+		<div id="content">
+			<% flash.each do |key, value| %>
 				<div id="flash" class="flash_<%= key %>">
 					<span class="message"><%= value %></span>
 				</div>
