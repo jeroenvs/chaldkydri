@@ -1,7 +1,20 @@
 <h1>Editing post</h1>
 
 <% form_for(@post) do |f| %>
-  <%= render :partial => "form" , :locals => { :f => f }  %>
+	<%= f.error_messages %>
+
+	<p>
+	    <%= f.label :title %><br />
+	    <%= f.text_field :title %>
+	</p>
+	<p>
+	    <%= f.label :body %><br />
+		<%= textile_editor 'post', 'body' -%>
+		<%= textile_editor_initialize -%>
+	</p>
+	<p>
+	    <%= f.submit  %>
+	</p>
 <% end %>
 
 <%= link_to 'Show', @post %> |

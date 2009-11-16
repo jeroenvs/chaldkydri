@@ -3,17 +3,22 @@ class UsersController < ApplicationController
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   
-
-  # render new.rhtml
+  def show
+    @user = User.find(params[:id])
+    
+    respond_to do |format|
+       format.html
+       # format.xml { render :xml => @user }
+     end
+  end
+  
   def new
+    
   end
 
   def create
     cookies.delete :auth_token
-    # protects against session fixation attacks, wreaks havoc with 
-    # request forgery protection.
-    # uncomment at your own risk
-    # reset_session
+
     @user = User.new(params[:user])
     @user.register! if @user.valid?
     if @user.errors.empty?
@@ -25,7 +30,7 @@ class UsersController < ApplicationController
 
   def activate
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
-    if current_user && !current_user.active?
+    if current_user && ! current_user.active?
       current_user.activate!
       flash[:notice] = "Signup complete!"
     else 
@@ -37,7 +42,7 @@ class UsersController < ApplicationController
   def change_password
     return unless request.post?
     if User.authenticate(current_user.login, params[:old_password])
-      if ((params[:password] == params[:password_confirmation]) && !params[:password_confirmation].blank?)
+      if params[:password] == params[:password_confirmation]
         current_user.password_confirmation = params[:password_confirmation]
         current_user.password = params[:password]
 
@@ -73,11 +78,10 @@ class UsersController < ApplicationController
       return if @user unless params[:user]
 
       if ((params[:user][:password] && params[:user][:password_confirmation]) && ! params[:user][:password_confirmation].blank?)
-      self.current_user = @user #for the next two lines to work
-      current_user.password_confirmation = params[:user][:password_confirmation]
-      current_user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
+      @user.password = params[:user][:password]
       @user.reset_password
-      flash[:notice] = current_user.save ? "Password reset success." : "Password reset failed." 
+      flash[:notice] = @user.save ? "Password reset success." : "Password reset failed." 
       redirect_back_or_default('/')
     else
       flash[:alert] = "Password mismatch" 
@@ -105,6 +109,7 @@ class UsersController < ApplicationController
   end
 
 protected
+
   def find_user
     @user = User.find(params[:id])
   end

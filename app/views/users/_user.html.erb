@@ -1,0 +1,7 @@
+<% div_for user do %>
+
+	<h3><%= user.login %></h3>
+	<p><%= user.email %></p>
+	<p>Created <%= time_ago_in_words(user.created_at) %> ago</p>
+
+<% end %>
