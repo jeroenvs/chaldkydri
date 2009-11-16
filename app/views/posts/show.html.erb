@@ -12,7 +12,7 @@
 </div>
 
 <%- if user_logged_in? %>
-	<% remote_form_for [@post, Comment.new] do |f| %>
+	<% form_for [@post, Comment.new] do |f| %>
 		<p>
 			<%= f.label :body, "New comment" %><br />
 			<%= textile_editor 'comment', 'body' -%><br />
@@ -23,7 +23,7 @@
 <%- end %>
 
 <script type="text/javascript"> 
-	jQuery(function() {
-	  // commands go here
-	})
+	$(document).ready(function() {
+		$('#new_comment').ajaxSubmit();
+	}
 </script>
