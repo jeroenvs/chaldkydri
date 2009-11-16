@@ -5,6 +5,7 @@
 	<%= link_to 'Back', posts_path %>
 </p>
 
+<br />
 <h3>Comments</h3>
 
 <div id="comments">
@@ -12,6 +13,9 @@
 </div>
 
 <%- if user_logged_in? %>
+	<br />
+	<h3>Add comment</h3>
+
 	<% form_for [@post, Comment.new] do |f| %>
 		<p>
 			<%= f.label :body, "New comment" %><br />
@@ -19,11 +23,11 @@
 			<%= textile_editor_initialize -%>
 			<%= f.submit "Add comment" %>
 		</p>
+		
+		<script type="text/javascript">
+			$(function() {
+				$('#new_comments').submitWithAjax();
+			});
+		</script>
 	<% end %>
 <%- end %>
-
-<script type="text/javascript"> 
-	$(document).ready(function() {
-		$('#new_comment').ajaxSubmit();
-	}
-</script>

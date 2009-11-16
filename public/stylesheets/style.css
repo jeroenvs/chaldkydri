@@ -1,99 +1,57 @@
 body {
+	margin: 0px;
+	padding: 0px;
+/*	background: #ddeef6 url("http://s.twimg.com/a/1258070043/images/front-bg.gif") repeat-x;*/
+	background-color: #ddeef6;
+	font-family: "Lucid Grande", sans-serif;
+	font-size: 0.75em;
+	color: #333333;
+}
+
+body a {
 	color: black;
-	font-family: verdana, helvetica, arial, sans-serif;
-	font-size: 73%;
-	margin: 0;
-	padding: 0;
-}
-
-html > body {
-	font-size: 9pt;
-}
-
-a:link {
-	font-family: verdana, helvetica, arial, sans-serif;
-	cursor: pointer;	
-	color: black;	
-}
-
-a:active {
-	font-family: verdana, helvetica, arial, sans-serif;
-	cursor: pointer;
-	color: black;
-}
-
-a:visited {
-	font-family: verdana, helvetica, arial, sans-serif;
-	cursor: pointer;
-	color: black;
-}
-
-a:hover {
-	font-family: verdana, helvetica, arial, sans-serif;
-	cursor: pointer;
-	color: black;
-	text-decoration: none;
 }
 
 /* Header */
 
 #header {
 	color: inherit;
-	background-color: rgb(184,38,25);
 }
 
-.session {
-	color: black;
-	background-color: #eee9e9;
+#session {
 	text-align: right;
 	margin: 0;
 	padding: 0.5ex 10px;
 }
 
-.session span {
-	color: #900;
-	background-color: transparent;
-	font-weight: bold;
-}
-
-.logo {
-	color: black;
-	background-color: #cdc9c9;
+#logo {
 	text-align: center;
 	margin: 0;
 	padding: 0.26ex 10px;
 }
 
-.navigation {
-	color: white;
-	background-color: #8b8989;
-	font-size: 109%;
+#navigation {
 	text-align: center;
 	margin: 0;
 	padding: 0.5ex 0;
 }
 
-.navigation a {
-	color: white;
-	text-decoration: none;
-	font-weight: bold;
-	margin: 0;
-	padding: 0 1ex;
-}
-
 /* Content */
 
-#content {
-	color: black;
-	background-color: white;
-	text-align: justify;
-	line-height: 1.5em;
-	margin: 0 0 0 13.5em;
-	padding: 0.5ex 15em 1em 1em;
-	border-left: 1px solid rgb(216,210,195);
+#container {
+	width: 715px;
+	margin: 0 auto 25px auto;
+	background-color: #FFF;
+	padding: 20px 20px;
+	border: solid 1px black;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
-/* Extra */
+#content {
+	margin-top: 50px;
+}
+
 
 fieldset {
 	margin: 1em 0;
@@ -101,12 +59,6 @@ fieldset {
 	padding-top: 0.4em;
 	background: #FFFFFF;
 	border: 1px solid #e7e8ac;
-}
-
-form label {
-	color: #444;
-	font-size: 1.2em;
-	font-weight: bold;
 }
 
 .flash_notice {
@@ -127,15 +79,4 @@ form label {
 
 .flash_alert .message {
 	padding: 0 0 0 25px;
-}
-
-dt {
-	font-weight: bold;
-	margin: 0;
-	padding: 0 0 0.5ex 0;
-}
-
-dd {
-	margin: 0 0 1.5em 1.5em;
-	padding: 0;
 }
