@@ -18,16 +18,14 @@
 
 	<% form_for [@post, Comment.new] do |f| %>
 		<p>
-			<%= f.label :body, "New comment" %><br />
-			<%= textile_editor 'comment', 'body' -%><br />
-			<%= textile_editor_initialize -%>
+			<%= f.text_area :body %>
 			<%= f.submit "Add comment" %>
 		</p>
-		
-		<script type="text/javascript">
-			$(function() {
-				$('#new_comments').submitWithAjax();
-			});
-		</script>
 	<% end %>
 <%- end %>
+
+<script type="text/javascript">
+	$(function() {
+		$('#new_comment').ajaxSubmit();
+	});
+</script>
