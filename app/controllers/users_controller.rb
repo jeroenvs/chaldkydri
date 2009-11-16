@@ -5,15 +5,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    
-    respond_to do |format|
-       format.html
-       # format.xml { render :xml => @user }
-     end
-  end
-  
-  def new
-    
   end
 
   def create
@@ -34,7 +25,7 @@ class UsersController < ApplicationController
       current_user.activate!
       flash[:notice] = "Signup complete!"
     else 
-      flash[:error] =  "Something went wrong!"
+      flash[:alert] =  "Invalid activation key"
     end
     redirect_back_or_default('/')
   end
@@ -53,7 +44,7 @@ class UsersController < ApplicationController
           flash[:alert] = "Password not changed" 
         end
       else
-        flash[:alert] = "New Password mismatch" 
+        flash[:alert] = "New password mismatch" 
         @old_password = params[:old_password]
       end
     else

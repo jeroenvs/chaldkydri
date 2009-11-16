@@ -8,11 +8,10 @@
 		
 		<!-- Comments -->
 		<% if post.comments.size > 0 %>
-			Commented by 
 			<% if post.comments.size == 1 %>
-				<%= post.comments.first.user.login %>.
+				Replied by <%= post.comments.first.user.login %>.
 			<% else %>
-				<%= post.comments.size %> users.
+				Replied <%= post.comments.size %> times.
 			<% end %>
 		<% end %>
 	</small>

@@ -119,6 +119,16 @@ form label {
 	padding: 0 0 0 25px;
 }
 
+.flash_alert {
+	color: #FF0000;  
+	background: #f88;
+	border: solid 1px #FF0000;  
+}
+
+.flash_alert .message {
+	padding: 0 0 0 25px;
+}
+
 dt {
 	font-weight: bold;
 	margin: 0;

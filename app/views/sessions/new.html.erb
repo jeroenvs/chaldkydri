@@ -1,4 +1,5 @@
 <% form_tag session_path do -%>
+
 	<p><label for="login">Login</label><br/>
 	<%= text_field_tag 'login' %></p>
 
@@ -11,4 +12,5 @@
 	<p><%= submit_tag 'Log in' %></p>
 	
 	<%= link_to "Signup", signup_url %> | <%= link_to "Forgot password", forgot_password_url %>
+	
 <% end -%>
